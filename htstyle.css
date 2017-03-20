@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+	font-family:"Open Sans";
+}
+
+body {
+	background-image: url("https://image.ibb.co/ek8cgF/300135_background_images_for_websites_circles.jpg");
+	background-repeat: repeat;
+}
+
+#apptitle {
+	text-align: center;
+	position: relative;
+	color: white;
+	font-size: 60px;
+}
+
+#appform {
+	font-size: 25px;
+	font-color: white;
+	text-align: center;
+}
+
+input[name=email] {
+	margin-left: 60px;
+	text-align: center;
+}
+
+input[name=phonenum] {
+margin-left: 48px;
+text-align: center;
+}
+
+input[type="submit"] {
+	margin-left: 130px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+input[name=lname] {
+	margin-left: 3px;
+	text-align: center;
+}
+#hinfo {
+	color: white;
+	margin-left: 10px;
+	text-align: center;
+}
+
+input[name=fname] {
+	text-align:center;
+}
