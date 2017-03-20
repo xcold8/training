@@ -1,0 +1,28 @@
+body{background:#fff;font-family:Helvetica;color:#333;}
+
+#login_cont, #signup_cont{display:none;}
+#login_cont.active, #signup_cont.active{display:block;}
+
+#main{width:850px;margin:0 auto;}
+#main .top_buttons{padding:20px 0;text-align:center;}
+#main .top_buttons .btn{margin:0 15px;padding:0 15px;font-size:32px;font-weight:bold;cursor:pointer;display:inline-block;}
+#main .top_buttons .btn.active{color:#12993c;}
+
+#main .social_buttons{padding:20px 0;border-top:solid 3px #eee;border-bottom:solid 3px #eee;text-align:center;}
+#main .social_buttons .btn{cursor:pointer;margin:0 5px;width:300px;height:50px;line-height:50px;color:#fff;font-weight:100;text-align:center;font-size:14px;display:inline-block;text-transform:uppercase;transition:background .5s ease;}
+#main .social_buttons .btn.fb{background:#3B5998;}
+#main .social_buttons .btn.fb:hover{background:#203563;}
+#main .social_buttons .btn.gp{background:#dd4b39;}
+#main .social_buttons .btn.gp:hover{background:#9b3729;}
+#main .social_buttons .btn i{}
+#main .social_buttons .btn.fb i{}
+#main .social_buttons .btn.gp i{}
+
+#main .fields{padding:20px 0;width:400px;margin:0 auto;}
+#main .fields .inp{cursor:text;width:300px;border:solid 2px #e8e8e8;border-radius:3px;padding:12px 0;margin:0 auto;margin-bottom:15px;}
+#main .fields .inp input{outline:none;width:100%;background:transparent;border:none;font-size:14px;font-family:Helvetica;text-indent:20px;}
+
+#main .bottom{text-align:center;}
+#main .bottom #btn_login{width:300px;text-transform:uppercase;height:50px;line-height:50px;color:#fff;font-weight:100;text-align:center;font-size:14px;background:#12993c;border:none;cursor:pointer;}
+#main .bottom .forgot{padding:20px 0;}
+#main .bottom .forgot a{text-decoration:underline;color:#333;}

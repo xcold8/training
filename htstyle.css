@@ -7,10 +7,10 @@
 body {
 	background-image: url("https://image.ibb.co/ek8cgF/300135_background_images_for_websites_circles.jpg");
 	background-repeat: repeat;
+	text-align: center;
 }
 
 #apptitle {
-	text-align: center;
 	position: relative;
 	color: white;
 	font-size: 60px;
@@ -22,12 +22,12 @@ body {
 	text-align: center;
 }
 
-input[name=email] {
+#appform input[name=email] {
 	margin-left: 60px;
 	text-align: center;
 }
 
-input[name=phonenum] {
+#appform input[name=phonenum] {
 margin-left: 48px;
 text-align: center;
 }
