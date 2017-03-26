@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON training</title>
+	<style type="text/css">
+		#main{position: relative;margin:0 auto;padding:40px;text-align:center;font-family:Helvetica;}
+		#main h1{}
+		#main h2{}
+		#main ul{list-style:none;margin:0;padding:0;}
+		#main ul li{list-style:none;margin:0;padding:15px;}
+	</style>
+	<script type="text/javascript">
+		
+		var data_string = '{"zotapay":[{"first_name":"Eliran","last_name":"Assa","age":30,"city":"tel aviv","country":"il"},{"first_name":"AB","last_name":"Ziv","age":32,"city":"tel aviv","country":"il"}],"phanatic":[{"first_name":"Haim","last_name":"Ayalon","age":29,"city":"yashresh","country":"il"},{"first_name":"Gal","last_name":"Vital","age":31,"city":"givat ada","country":"il"}]}';
+
+		// TASK: Render the page according to the above data, with no hard-coded html.
+		// Non-hardcoded html should loook like: <div id="main"><h1>Mabsut</h1></div>
+
+	</script>
+</head>
+<body>
+
+	<div id="main">
+
+		<h1>Mabsut</h1>
+
+		<h2>Zotapay</h2>
+		<ul>
+			<li>
+				<b>AB Ziv</b>,<br>
+				32 years old, living in tel aviv, il.
+			</li>
+			<li>
+				<b>Eliran Assa</b>,<br>
+				30 years old, living in tel aviv, il.
+			</li>
+		</ul>
+
+		<h2>Phanatic</h2>
+		<ul>
+			<li>
+				<b>Gal Vital</b>,<br>
+				31 years old, living in givat ada, il.
+			</li>
+			<li>
+				<b>Haim Ayalon</b>,<br>
+				29 years old, living in yashresh, il.
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
