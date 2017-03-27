@@ -22,11 +22,13 @@
 		for (var company in o) {
 			$('#main').append('<h3>' + company + '</h3>');
 			var arr = o[company];
-				for (var worker in arr){
-					$('#main').append('<h4>' + arr[worker].first_name +' '+ arr[worker].last_name + ' is ' + arr[worker].age + ' years old. lives in ' + arr[worker].city + ', '+ arr[worker].country +'</h4>');
-				}
+			for (var worker in arr){
+				var w = arr[worker];
+				$('#main').append('<h4>' + w.first_name +' '+ w.last_name + ' is ' + w.age + ' years old. lives in ' + w.city + ', '+ w.country +'</h4>');
 			}
-		});
+		}
+
+	});
 
 	</script>
 </head>
