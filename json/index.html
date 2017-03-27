@@ -19,27 +19,15 @@
 		// TASK: Render the page according to the above data, with no hard-coded html.
 		// Non-hardcoded html should loook like: <div id="main"><h1>Mabsut</h1></div>
 		var o = JSON.parse(data_string);
-		var zota = o.zotapay;
-		var phanatic = o.phanatic;
 		for (var company in o) {
-			$('#main .comp1').append('<h3>' + company + '</h3>');
-			for (var fname in o.zotapay.first_name) {
-					
+			$('#main').append('<h3>' + company + '</h3>');
+			var arr = o[company];
+				for (var worker in arr){
+					$('#main').append('<h4>' + arr[worker].first_name +' '+ arr[worker].last_name + ' is ' + arr[worker].age + 'lives in ' + arr[worker].city + ', '+ arr[worker].country +'</h4>');
+				}
 			}
+		});
 
-			}
-		for (var i=0;i < zota.length; i++){
-			var obj = zota[i];
-			$('#main ul.zotaa').append('<b>'+ obj.first_name + ' ' + obj.last_name+'<b><br/>');
-			$('#main ul.zotaa').append('<li>' + obj.age + ' ' + 'years old' + 'living in' + ' ' + obj.city + '' + ',' + ' ' + obj.country +'<li>');
-		}
-		for (var j=0;j < phanatic.length; j++){
-			var obj2 = phanatic[j];
-			$('#main ul.phan').append('<b>'+ obj2.first_name + ' ' + obj2.last_name+'<b><br/>');
-			$('#main ul.phan').append('<li>' + obj2.age + ' ' + 'years old' + 'living in' + ' ' + obj2.city + '' + ',' + ' ' + obj2.country +'<li>');
-
-		}
-	});
 	</script>
 </head>
 <body>
@@ -48,26 +36,6 @@
 
 		<h1>Mabsut</h1>
 
-		<h2 class="comp1"></h2>
-		<ul class = "zotaa">
-			<li>
-				
-			
-			</li>
-			<li>
-			
-			</li>
-		</ul>
-
-		<h2 class ="comp2"></h2>
-		<ul class = "phan">
-			<li>
-			
-			</li>
-			<li>
-				
-			</li>
-		</ul>
 	</div>
 </body>
 </html>
