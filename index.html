@@ -48,10 +48,27 @@
 				}
 			}
 			$('#main .task_input .json_add').click(function(){
-			var obj5 = '[' +
-					'{ "title":"task title" , "done":"true" } ]';
-			console.log(obj5);
+				console.log(arr);
+				var tlist = [];
+				 $('#main .ulist li').each(function(){
+				 		var title = $(this).text();
+				 		var done = false;
+				 		if ( $(this).hasClass('done') ){
+							done = true;
+				 			} else {
+				 				done = false;
+				 	}
+				 item = {};
+				 item.title = title;
+				 item.done = done;
+
+				 tlist.push(item);
+				 console.log(item);
+				});
+
+
 			});
+		
 
 	});
 
