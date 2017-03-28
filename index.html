@@ -23,6 +23,7 @@
 		<div class="task_input">
 			<input class="text_input" type="text" placeholder="Add new task">
 			<input class="btn_add" type="button" value="Add" />
+			<input class="json_add" type="button" value="JSON" />
 		</div>
 		<div class="task_clear">
 			<input class="clear_btn" type="button" value="Clear done tasks">
@@ -38,14 +39,20 @@
 		var data_string = '[{"title":"Buy Milk","done":true},{"title":"Go to bank","done":false},{"title":"Win 10K jackpot in poker game","done":false}]';
 
 		var o = JSON.parse(data_string);
-		for (i=0; i < o.length; i++) {
+		for (var i=0; i < o.length; i++) {
 			var arr = o[i];
 			if (arr.done === true){
-				$('#main .ulist').append('<li class = "done">'+ arr.title +'</li>');
+				$('#main .ulist').append('<li class="done">'+ arr.title +'</li>');
 				} else {
-						$('#main .ulist').append('<li class = "new">'+ arr.title +'</li>'); 
+						$('#main .ulist').append('<li class="new">'+ arr.title +'</li>'); 
 				}
 			}
+			$('#main .task_input .json_add').click(function(){
+			var obj5 = '[' +
+					'{ "title":"task title" , "done":"true" } ]';
+			console.log(obj5);
+			});
+
 	});
 
 		/*
