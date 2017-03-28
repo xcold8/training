@@ -38,13 +38,12 @@
 		var data_string = '[{"title":"Buy Milk","done":true},{"title":"Go to bank","done":false},{"title":"Win 10K jackpot in poker game","done":false}]';
 
 		var o = JSON.parse(data_string);
-		for (var task in o) {
-			console.log(o[task].title);
-			if (o[task].done === true){
-				$('#main .ulist').append('<li class = "done">'+ o[task].title +'</li>');
+		for (i=0; i < o.length; i++) {
+			var arr = o[i];
+			if (arr.done === true){
+				$('#main .ulist').append('<li class = "done">'+ arr.title +'</li>');
 				} else {
-						console.log('o[task].title');
-						$('#main .ulist').append('<li class = "new">'+ o[task].title +'</li>'); 
+						$('#main .ulist').append('<li class = "new">'+ arr.title +'</li>'); 
 				}
 			}
 	});
