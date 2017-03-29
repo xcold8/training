@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Media Player</title>
+	<link rel="stylesheet" href="htstyle.css">
+</head>
+<body>
+
+	<div id="main">
+
+		<div class="top_container">
+			<h1>Music Player</h1>
+		</div>
+
+		<div class="tasks_wording">
+
+			<ul class="ulist">
+			</ul>
+
+		</div>
+
+		<div class="task_input">
+			<input class="text_input" type="text" placeholder="Add new task">
+			<input class="btn_add" type="button" value="Add" />
+			<input class="json_add" type="button" value="JSON" />
+		</div>
+		<div class="task_clear">
+			<input class="clear_btn" type="button" value="Clear done tasks">
+		</div>
+
+	</div>
+
+	<script src="jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var data_string = '[{"title":"Buy Milk","done":true},{"title":"Go to bank","done":false},{"title":"Win 10K jackpot in poker game","done":false}]';
+
+		var o = JSON.parse(data_string);
+		for (var i=0; i < o.length; i++) {
+			var arr = o[i];
+			if (arr.done === true){
+				$('#main .ulist').append('<li class="done">'+ arr.title +'</li>');
+				} else {
+						$('#main .ulist').append('<li class="new">'+ arr.title +'</li>'); 
+				}
+			}
+			$('#main .task_input .json_add').click(function(){
+				console.log(arr);
+				var tlist = [];
+				 $('#main .ulist li').each(function(){
+				 		var title = $(this).text();
+				 		var done = false;
+				 		if ( $(this).hasClass('done') ){
+							done = true;
+				 			} else {
+				 				done = false;
+				 	}
+				 item = {};
+				 item.title = title;
+				 item.done = done;
+
+				 tlist.push(item);
+				 console.log(tlist);
+				});
+
+
+			});
+		
+
+	});
+
+		/*
+
+			Task (2 steps):
+			---------------
+
+			1. 	According to what you've learned in the previous task, 
+				use the above json as a datasource for the Todo list.
+				When the page loads, the list should be populated with the data, in the exact state (notice the 'done' property on each item - it should be reflected in the UI as well).
+
+			2. 	Only after (1.) is done and approved, 
+				create a button that on click will console.log a NEW json object,
+				representing the CURRENT list.
+
+
+			Good luck.
+
+		*/
+
+	</script>
+</body>
+</html>
