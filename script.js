@@ -1,4 +1,3 @@
-
 // adds a string to the list as an item
 function addItem(text_inp) {
 	if (!text_inp)

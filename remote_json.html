@@ -11,45 +11,19 @@
 	<h1>Remote JSON Task</h1>
 
 	<div class="user">
-		<h5>Gal Vital (galvital@gmail.com)</h5>
-		<p>
-			Givat Ada, Israel <br>
-			Website: http://galvit.al <br>
-			Company: Phanatic Labs <br>
-		</p>
-		<p>
-			<b>Phone:</b>
-			052-555-1212
-		</p>
+		
+	
 	</div>
-
-	<div class="user">
-		<h5>Gal Vital (galvital@gmail.com)</h5>
-		<p>
-			Givat Ada, Israel <br>
-			Website: http://galvit.al <br>
-			Company: Phanatic Labs <br>
-		</p>
-		<p>
-			<b>Phone:</b>
-			052-555-1212
-		</p>
-	</div>
-
-	<div class="user">
-		<h5>Gal Vital (galvital@gmail.com)</h5>
-		<p>
-			Givat Ada, Israel <br>
-			Website: http://galvit.al <br>
-			Company: Phanatic Labs <br>
-		</p>
-		<p>
-			<b>Phone:</b>
-			052-555-1212
-		</p>
-	</div>
-
+	<script src="jquery.min.js"></script>
 	<script>
+
+		$.get("http://jsonplaceholder.typicode.com/users", function(data_string){
+			var o = data_string;
+				for (var i=0; i < o.length; i++){
+					$('html body').append('<p class="user">'+ o[i].name + ' '+ '(' + o[i].email +')' +o[i].address.city + ' '+ o[i].website + '</p></br>');
+					$('html body').append('<p class="user"><b>' + o[i].phone +'</b></p>');
+				}
+			});
 		/*
 			Task:
 			-----
