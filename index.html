@@ -62,13 +62,15 @@
 		    		var tdata = track[i];
 		    		console.log(tdata.ytid);
 		    		$('#main .songlist ul.slist').append('<li ytid="'+ tdata.ytid +'">'+ tdata.title + '</li>');
+		    	 }
+
 		    		$('#main .songlist ul.slist li').click(function(){
 		      		var songid = $(this).attr('ytid');
 		      		player.loadVideoById(songid, 5, "small");
-		      	
-		      	});
-		    }
-		      });
+		      	 });
+		    	
+		 		});
+		    
     </script>	
 
 
