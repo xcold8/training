@@ -7,14 +7,14 @@
 <script src="jquery.min.js"></script>
 	<div class="songlist">
 		<ul class = slist>
-			<li id="sOnqjkJTMaA">Michael Jackson - Thriller</li>
-			<li id="IJSDQWtYlIw">Paul Van Dyk - Tell Me Why</li>
-			<li id="bn1ycNxQMvk">Armin Van Buuren - Communication</li>
+		
 		</ul>
 	</div>
 	    <div id="player"></div>
 
 		    <script>
+ 			
+
 		      // 2. This code loads the IFrame Player API code asynchronously.
 		      var tag = document.createElement('script');
 
@@ -55,11 +55,19 @@
 		      function stopVideo() {
 		        player.stopVideo();
 		      }
-		      $(document).ready(function(){
-		      	$('#main .songlist ul.slist li').click(function(){
-		      		var songid = $(this).attr('id');
+		     
+		      	$(document).ready(function(){
+		   		 var track = [{"title":"one","ytid":"sOnqjkJTMaA"},{"title":"two","ytid":"bn1ycNxQMvk"},{"title":"three","ytid":"yo4pmauhugo"}];
+		   		 for (var i=0; i < track.length; i++){
+		    		var tdata = track[i];
+		    		console.log(tdata.ytid);
+		    		$('#main .songlist ul.slist').append('<li ytid="'+ tdata.ytid +'">'+ tdata.title + '</li>');
+		    		$('#main .songlist ul.slist li').click(function(){
+		      		var songid = $(this).attr('ytid');
 		      		player.loadVideoById(songid, 5, "small");
+		      	
 		      	});
+		    }
 		      });
     </script>	
 
