@@ -1,0 +1,14 @@
+body{;}
+body .ui.cards {;}
+body .ui.cards .card {;}
+body .ui.cards .card .content {;}
+body .ui.cards .card .content .right.floated.mini.ui.image{display:none;}
+body .ui.cards .card .content .right.floated.mini.ui.image .header{;}
+body .ui.cards .card .content .right.floated.mini.ui.image .header .meta{;}
+body .ui.cards .card .content .right.floated.mini.ui.image .header .meta .description{;}
+body .ui.cards .card .extra.content {display:none;}
+body .ui.cards .card .extra.content .ui.two.buttons {;}
+body .ui.cards .card .extra.content .ui.two.buttons {;}
+body .ui.cards .card .extra.content .ui.two.buttons .ui.basic.green.button {;}
+body .ui.cards .card .extra.content .ui.two.buttons .ui.basic.red.button {;}
+.ui.attached.bottom.button{display:none;}

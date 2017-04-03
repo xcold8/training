@@ -4,6 +4,11 @@
 	<title>Remote JSON Task</title>
 	<style type="text/css">
 		.user{display:block;margin:0 auto;margin-top:20px;margin-bottom:20px;width:500px;padding:20px;background:blue;color:#fff;}
+		body{margin:auto;}
+		.ui.attached.bottom.button{display:none;}
+		.ui.cards{margin-left:500px !important;padding:10px;width:50%;height:1000px;}
+		.ui.cards .card {width:100%;display:block;margin-left:100px;}
+		.ui.cards .card div {display:inline-block;}
 	</style>
 </head>
 <link rel="stylesheet" href="https://trafficbalance.io/static/semantic/dist/semantic.min.css">
@@ -12,40 +17,31 @@
 	<h1>Remote JSON Task</h1>
 
 	<div class="ui cards">
-  		<div class="card">
-    		<div class="content">
-      			<div class="header">Elliot Fu</div>
-      				<div class="description">
-        			Elliot Fu is a film-maker from New York.
-      				</div>
-    		</div>
-    	<div class="ui bottom attached button">
-   			<i class="add icon"></i>
-     		 Add Friend
-    	</div>
-		</div>
-	</div>
+  	
 	<script src="jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
 		$.get("http://jsonplaceholder.typicode.com/users", function(data_string){
 			var o = data_string;
 			var newCard = "<div class=\"card\">\
-    		<div class=\"content\">\
-      			<div class=\"header\">Elliot Fu</div>\
-      				<div class=\"description\">\
-        			Elliot Fu is a film-maker from New York.\
-      				</div>\
-    		</div>\
-    	<div class=\"ui bottom attached button\">\
-   			<i class=\"add icon\"></i>\
-     		 Add Friend\
-    	</div>\
-		</div>";
+    							<div class=\"content\">\
+      					  </div>\
+    						</div>\
+    						<div class=\"ui bottom attached button\">\
+   							<i class=\"add icon\"></i>\
+     		 					Add Friend\
+    						</div>\
+					     </div>";
 				for (var i=0; i < o.length; i++){
 					var $tCard = $(this).closest('.card .content');
 					$(o[i]).each(function(){
-						$(newCard).appendTo('.ui.cards').find('.content').append('<div class="header">'+o[i].name+'</div>');
+						$(newCard).appendTo('.ui.cards').find('.content').append(`
+							 <div class="header">`+o[i].name+`</div>
+							 <div class="description">`+o[i].phone+`</div>
+							 <div class="description">`+o[i].email+`</div>
+							 <div class="description">`+o[i].website+`</div>
+							 <div class="description">`+o[i].address.city+`</div>`
+							);
 					});
 					
 				}
