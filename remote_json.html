@@ -6,28 +6,56 @@
 		.user{display:block;margin:0 auto;margin-top:20px;margin-bottom:20px;width:500px;padding:20px;background:blue;color:#fff;}
 	</style>
 </head>
+<link rel="stylesheet" href="https://trafficbalance.io/static/semantic/dist/semantic.min.css">
 <body>
 
 	<h1>Remote JSON Task</h1>
 
-	<div class="user">
-		
-	
+	<div class="ui cards">
+  		<div class="card">
+    		<div class="content">
+      			<div class="header">Elliot Fu</div>
+      				<div class="description">
+        			Elliot Fu is a film-maker from New York.
+      				</div>
+    		</div>
+    	<div class="ui bottom attached button">
+   			<i class="add icon"></i>
+     		 Add Friend
+    	</div>
+		</div>
 	</div>
 	<script src="jquery.min.js"></script>
 	<script>
-
+		$(document).ready(function(){
 		$.get("http://jsonplaceholder.typicode.com/users", function(data_string){
 			var o = data_string;
+			var newCard = "<div class=\"card\">\
+    		<div class=\"content\">\
+      			<div class=\"header\">Elliot Fu</div>\
+      				<div class=\"description\">\
+        			Elliot Fu is a film-maker from New York.\
+      				</div>\
+    		</div>\
+    	<div class=\"ui bottom attached button\">\
+   			<i class=\"add icon\"></i>\
+     		 Add Friend\
+    	</div>\
+		</div>";
 				for (var i=0; i < o.length; i++){
-					$('html body').append('<p class="user">'+ o[i].name + ' '+ '(' + o[i].email +')' +o[i].address.city + ' '+ o[i].website + '</p></br>');
-					$('html body').append('<p class="user"><b>' + o[i].phone +'</b></p>');
+					var $tCard = $(this).closest('.card .content');
+					$(o[i]).each(function(){
+						$(newCard).appendTo('.ui.cards').find('.content').append('<div class="header">'+o[i].name+'</div>');
+					});
+					
 				}
-			});
+		  });
+	});
 		/*
 			Task:
 			-----
-
+/* $('html body').append('<p class="user">'+ o[i].name + ' '+ '(' + o[i].email +')' +o[i].address.city + ' '+ o[i].website + '</p></br>');
+					$('html body').append('<p class="user"><b>' + o[i].phone +'</b></p>');
 			Learn about jQuery GET (communicate with server) 
 				Read these 2:
 				- https://www.w3schools.com/jquery/jquery_ajax_get_post.asp
